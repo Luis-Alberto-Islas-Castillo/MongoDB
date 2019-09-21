@@ -9,3 +9,7 @@ db.inventory.insertMany([
 db.inventory.find( {} )
 
 db.inventory.find( { status: "D" } )
+
+db.inventory.find( { status: { $in: [ "A", "D" ] } } )
+
+db.inventory.find( { status: "A", qty: { $lt: 30 } } )
