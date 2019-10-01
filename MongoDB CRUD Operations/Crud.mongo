@@ -28,3 +28,12 @@ db.inventory.find( {
 db.inventory.find( {
     $or: [ { qty: { $lt: 75 } }, { item: /^p/ } ]
 } )
+
+db.inventory.find( {
+    $or: [ { qty: { $gt: 50 } }, { item: /u/ } ]
+} )
+
+db.inventory.find( {
+    status: { $in: [ "A", "D" ] },
+    $or: [ { qty: { $gt: 25 } }, { qty: { $lt: 75 } }, { item: /u/ } ]
+} )
