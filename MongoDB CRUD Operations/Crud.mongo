@@ -65,3 +65,10 @@ db.inventory.insertMany([
 db.inventory.find( { tags: ["red", "blank"] } )
 
 db.inventory.find( { tags: { $all: ["red", "blank"] } } )
+
+db.inventory.find( { tags: "red" } )
+
+db.inventory.find( {
+    status: { $nin: [ "E", "F" ] },
+    $or: [ { "size.h": { $gt: 10 } }, { "size.w": { $lt: 15 } } ]
+} )
