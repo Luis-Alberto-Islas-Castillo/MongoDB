@@ -80,4 +80,12 @@ db.inventory.find( {
 
 db.inventory.find( {
     tags: ["red", "blank"],
-    $or: [ { "dim_cm": { $gt: 15 } }, { "dim_cm": { $lt: 20 } } 
+    $or: [ { "dim_cm": { $gt: 15 } }, { "dim_cm": { $lt: 20 } } ]
+} )
+
+db.inventory.find( {
+    tags: { $size: 2 },
+    $or: [ { "qty": { $gt: 50 } }, { "qty": { $lt: 75 } }, { "dim_cm": { $gt: 15 } }, { "dim_cm": { $lt: 50 } } ]
+} )
+
+db.inventory.find(null, {item : 1, tags : 1, dim_cm : 1}, {"item":{$ne:null}}, {"tags":{$ne:null}}, {"dim_cm":{$ne:null}})
