@@ -72,3 +72,12 @@ db.inventory.find( {
     status: { $nin: [ "E", "F" ] },
     $or: [ { "size.h": { $gt: 10 } }, { "size.w": { $lt: 15 } } ]
 } )
+
+db.inventory.find( {
+    item: { $nin: [ "journal" ] },
+    $or: [ { "size.uom": "cm" }, { "size.uom": "in" } ]
+} )
+
+db.inventory.find( {
+    tags: ["red", "blank"],
+    $or: [ { "dim_cm": { $gt: 15 } }, { "dim_cm": { $lt: 20 } } 
