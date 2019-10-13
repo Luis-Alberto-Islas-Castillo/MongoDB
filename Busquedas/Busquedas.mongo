@@ -1,0 +1,13 @@
+db.casas.insert(
+   [
+     { _id: 1, casa: "Stark", lema: "Se Acerca el Invierno", estandarte: "Lobo Huargo" },
+     { _id: 2, casa: "Arryn", lema: "Tan Alto como el Honor", estandarte: "Halcon" },
+     { _id: 3, casa: "Greyjoy", lema: "Nosotros no Sembramos", estandarte: "Calamar" },
+     { _id: 4, casa: "Lannister", lema: "Oye mi Rugido", estandarte: "Leon" },
+     { _id: 5, casa: "Baratheon", lema: "Nuestra es la Furia", estandarte: "Ciervo"},
+     { _id: 6, casa: "Tyrell", lema: "Crecer Fuerte", estandarte: "Rosa de Oro" },
+     { _id: 7, casa: "Martell", lema: "Nunca Doblegado Nunca Roto", estandarte: "Sol Atravesando con una Lanza" },
+     { _id: 8, casa: "Targarien", lema: "Fuego y Sangre",estandarte: "Dragon con Tres Cabezas" },
+     { _id: 9, casa: "Tully", lema: "Familia Deber y Honor", estandarte: "Trucha" }
+   ]
+)
