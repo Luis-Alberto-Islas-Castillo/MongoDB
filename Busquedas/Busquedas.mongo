@@ -11,3 +11,9 @@ db.casas.insert(
      { _id: 9, casa: "Tully", lema: "Familia Deber y Honor", estandarte: "Trucha" }
    ]
 )
+
+db.casas.createIndex( { lema: "text"} )
+
+db.casas.find( { $text: { $search: "Invierno Fuego y Sangre " } } )
+
+db.casas.find( { $text: { $search: "Honor Fuerte Roto " } } )
