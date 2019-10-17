@@ -17,3 +17,9 @@ db.casas.createIndex( { lema: "text"} )
 db.casas.find( { $text: { $search: "Invierno Fuego y Sangre " } } )
 
 db.casas.find( { $text: { $search: "Honor Fuerte Roto " } } )
+
+db.casas.find( { $text: { $search: "Alto Nosotros no Sembramos " } } )
+
+db.casas.find( { $text: { $search: "\"Nunca Doblegado Nunca Roto\"" } } )
+
+db.casas.find( { $text: { $search: "\"Tan Alto como el Honor\"" } } )
