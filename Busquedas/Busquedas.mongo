@@ -23,3 +23,7 @@ db.casas.find( { $text: { $search: "Alto Nosotros no Sembramos " } } )
 db.casas.find( { $text: { $search: "\"Nunca Doblegado Nunca Roto\"" } } )
 
 db.casas.find( { $text: { $search: "\"Tan Alto como el Honor\"" } } )
+
+db.casas.find( { $text: { $search: "\"Nuestra es la Furia\"" } } )
+
+db.casas.find( { $text: { $search: "Nunca Dobl -Rugido" } } )
