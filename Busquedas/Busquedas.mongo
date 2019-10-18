@@ -27,3 +27,7 @@ db.casas.find( { $text: { $search: "\"Tan Alto como el Honor\"" } } )
 db.casas.find( { $text: { $search: "\"Nuestra es la Furia\"" } } )
 
 db.casas.find( { $text: { $search: "Nunca Dobl -Rugido" } } )
+
+db.casas.find( { $text: { $search: "Nosotros no -Fuerte" } } )
+
+db.casas.find( { $text: { $search: "Nuestra es -Invierno" } } )
