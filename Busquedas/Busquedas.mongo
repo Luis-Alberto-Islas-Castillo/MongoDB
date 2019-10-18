@@ -31,3 +31,8 @@ db.casas.find( { $text: { $search: "Nunca Dobl -Rugido" } } )
 db.casas.find( { $text: { $search: "Nosotros no -Fuerte" } } )
 
 db.casas.find( { $text: { $search: "Nuestra es -Invierno" } } )
+
+db.casas.find(
+   { $text: { $search: "Invierno Fuego y Sangre" } },
+   { score: { $meta: "textScore" } }
+).sort( { score: { $meta: "textScore" } } )
