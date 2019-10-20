@@ -1,0 +1,22 @@
+db.peliculas.insert(
+   [
+     { _id: 1, Pelicula: "Avatar", Genero: "Ciencia ficción", Estreno: "2009-05-08T12:10:40.787",Presupuesto: 237000.000, Recaudacion: 2787965.087, Productora: ["20th Century Fox"], Duracion:["162 minutos","178 minutos (Versión extendida)"], Actores: {Principal: "Sam Worthington", Secundario:"Sigourney Weaver"}, subtitulos: [ true ],Dimension: {"3D":true,"4K":false}},
+     { _id: 2, Pelicula: "Titanic", Genero: "Romance", Estreno: "1997-02-21T15:11:20.781",Presupuesto: 200000.000, Recaudacion: 2187463.944, Productora: ["20th Century Fox","Paramount Pictures","Lightstorm Entertainment"],Duracion: ["195 min"],Actores: {Principal: "Leonardo DiCaprio", Secundario:"Bernard Hill"},subtitulos: [ false ],Dimension:{"3D":false,"4K":true}},
+     { _id: 3, Pelicula: "Star Wars: Episodio VII", Genero: "Ciencia ficción", Estreno:"2015-12-18T01:00:00Z",Presupuesto:245000.000, Recaudacion: 2068223.624, Productora: ["Lucasfilm","Bad Robot"], Duracion:["136 minutos"],Actores: {Principal: "Daisy Ridley", Secundario: "Oscar Isaac"},subtitulos: [ true ],Dimension:{"Blu-ray":true,"4K":false}},
+     { _id: 4, Pelicula: "Infinity War", Genero: "Accion", Estreno:  "2018-05-08T12:11:40.787",Presupuesto:400000.000, Recaudacion: 2046470.714, Productora: ["Marvel Studios"],Duracion:["149 minutos"], Actores: {Principal: "Robert Downey Jr", Secundario: "Scarlett Johansson"}, subtitulos: [ true ],Dimension: {"3D":true,"4K":false}},
+     { _id: 5, Pelicula: "Jurassic World", Genero: "Ciencia ficción", Estreno: "2015-06-12T03:00:00Z",Presupuesto: 150000.000, Recaudacion: 1671713.208, Productora:["Legendary Pictures","Amblin Entertainment"],Duracion: ["124 min"], Actores:{Principal: "Chris Pratt", Secundario: "Judy Greer"},subtitulos: [ false ],Dimension: {"Blu-ray":true,"3D":false}},
+     { _id: 6, Pelicula: "Los Vengadores", Genero: "Acción", Estreno: "2012-05-04T17:10:40.787Z",Presupuesto: 220000.000, Recaudacion: 1518812.988, Productora: ["Marvel Studios"],Duracion: ["143 minutos"], Actores:{Principal: "Samuel L. Jackson", Secundario: "Clark Gregg"}, subtitulos: [ false ],Dimension: {"Blue-ray":true}},
+     { _id: 7, Pelicula: "Fast & Furious 7", Genero: null, Estreno: "2015-02-01T05:02:00Z",Presupuesto: 190000.000, Recaudacion: 1516045.911, Productora: ["Universal Pictures"],Duracion: ["137 minutos","140 minutos(versión extendida)"], Actores:{Principal: "Vin Diesel", Secundario: "Tony Jaa"}, subtitulos: [ false ],Dimension: {"3D":true,"4K":true}},
+     { _id: 8, Pelicula: "Vengadores: La era de Ultrón", Genero: "Acción", Estreno: "2015-03-05T05:01:00Z",Presupuesto: 250000.000, Recaudacion: 1405983.798, Productora: ["Marvel Studios"], Duracion:["141 minutos"], Actores:{Principal: "Chris Hemsworth", Secundario: "Mark Ruffalo"},subtitulos: [ true ], Dimension: {"3D":true,"4K":true,"Blue-ray":false}},
+     { _id: 9, Pelicula: "Black Panther", Genero: "Acción", Estreno: "2018-04-08T12:10:40.788",Presupuesto: 200000.000, Recaudacion: 1346851.257, Productora: ["Marvel Studios"],Duracion:["134 minutos"], Actores:{Principal: "Chadwick Boseman", Secundario: "Lupita Nyong'o"}, subtitulos: [ false ],Dimension: {"4k":true}},
+     { _id: 10, Pelicula: "Harry Potter y las reliquias de la muerte: parte 2", Genero: "Fantasía", Estreno: "2011-09-08T00:00:00Z",Presupuesto: 250000.000, Recaudacion: 1341511.219, Productora: ["Heyday Films"],Duracion:["130 min"], Actores:{Principal: "Daniel Radcliffe", Secundario: "Mark Williams"}, subtitulos: [ true ],Dimension: {"Blue-ray":false,"3D":true}}
+   ]
+)
+
+//Arithmetic Expression Operators
+//$multiply
+db.peliculas.aggregate(
+   [
+     { $project: { Estreno: 1, Pelicula: 1, total: { $multiply: [ "$Presupuesto", "$Recaudacion" ] } } }
+   ]
+)
