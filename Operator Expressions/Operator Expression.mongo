@@ -20,3 +20,11 @@ db.peliculas.aggregate(
      { $project: { Estreno: 1, Pelicula: 1, total: { $multiply: [ "$Presupuesto", "$Recaudacion" ] } } }
    ]
 )
+
+//Array Expression Operators
+//$concatArrays 
+db.peliculas.aggregate(
+   [
+      { $project: {Pelicula: 1, items: { $concatArrays: [ "$Productora", "$Duracion" ] } } }
+   ]
+)
