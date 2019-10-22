@@ -41,3 +41,17 @@ db.peliculas.aggregate(
       }
    ]
 )
+
+//Comparison Expression Operators
+//$cmp
+db.peliculas.aggregate(
+   [
+      { $project:
+        {
+            Pelicula: 1,
+            Recaudacion: 1,
+            cmpTo2187463944: { $cmp:  [ "$Recaudacion:", 2187463.944 ] },  
+         }
+      }
+   ]
+)
