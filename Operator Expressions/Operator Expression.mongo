@@ -28,3 +28,16 @@ db.peliculas.aggregate(
       { $project: {Pelicula: 1, items: { $concatArrays: [ "$Productora", "$Duracion" ] } } }
    ]
 )
+
+//Boolean Expression Operators
+//$not
+db.peliculas.aggregate(
+   [
+      { $project:
+        {
+            Pelicula: 1,
+            result: { $not: [ { $gt: [ "$Presupuesto", 250000.000 ] } ] }
+         }
+      }
+   ]
+)
